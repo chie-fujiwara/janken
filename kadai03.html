@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My closet</title>
+    <link rel="stylesheet" href="./kadai02.css">
+</head>
+
+<body>
+    <header>
+        <h1>Fashion<br>Coordinate<br>Recommend</h1>
+    </header>
+
+    <main>
+
+        <div class="choice">
+            <h2>Choice my closet!<br>今日の気分は？</h2>
+            <span>トップス、ボトムの中から今日の１枚を選ぼう！</span>
+            <p>アイテムをクリック！</p>
+
+            <div class="tops">
+                <h3>TOPS</h3>
+                <div class="box_top">
+                    <a href="#recommend"><img id="tops1" src="img01/top_1.jpg" alt=""></a>
+                    <a href="#recommend"><img id="tops2" src="img01/top_2.jpg" alt=""></a>
+                    <a href="#recommend"><img id="tops3" src="img01/top_3.jpg" alt=""></a>
+                </div>
+            </div>
+
+            <div class="bottom">
+                <h3>BOTTOMS</h3>
+                <div class="box_bottom">
+                    <a href="#recommend"><img id="bottom1" src="img01/botom_1.jpg" alt=""></a>
+                    <a href="#recommend"><img id="bottom2" src="img01/botom_2.jpg" alt=""></a>
+                    <a href="#recommend"><img id="bottom3" src="img01/botom_3.jpg" alt=""></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="recommend" id="recommend">
+            <h2>Recommend</h2>
+            <p><span>あなたが選んだアイテムを主役にコーディネート！</span></p>
+            <div class="choice_item">
+                <img id="choice_item" src="img01/gray.png">
+            </div>
+            <div class="box_re">
+                <div class="re_1">
+                    <img id="re_1" src="img01/gray.png">
+                    <li>
+                        <button type="button" id="btn1">お気に入り</button>
+                    </li>
+                    <!-- <a href="https://baycrews.jp/brand/detail/framework/">more</a> -->
+                </div>
+                <div class="re_2">
+                    <img id="re_2" src="img01/gray.png">
+                    <li>
+                        <button type="button" id="btn2">お気に入り</button>
+                    </li>
+                    <!-- <a href="https://baycrews.jp/brand/detail/framework/">more</a> -->
+                </div>
+                <div class="re_3">
+                    <img id="re_3" src="img01/gray.png">
+                    <li>
+                        <button type="button" id="btn3">お気に入り</button>
+                    </li>
+                    <!-- <a href="https://baycrews.jp/brand/detail/framework/">more</a> -->
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+        <div class="favorite">
+            <h2>My favorite cordinate</h2>
+            <p><span>お気に入り</span></p>
+
+            <div id="box_favorite">
+            </div>
+
+            <div class="btn_box">
+                <button type="button" id="btn4">1枚目を<br>削除する</button>
+                <button type="button" id="btn5">2枚目を<br>削除する</button>
+                <button type="button" id="btn6">3枚目を<br>削除する</button>
+            </div>
+
+        </div>
+
+
+
+
+
+    </main>
+
+    <footer>
+        <small>♡My closet♡</small>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+
+            $("#tops1").on("click", function () {
+                //tops1を選ぶ
+                let item = ["img_02/01.jpg", "img_02/02.jpg", "img_02/03.jpg", "img_02/04.jpg",
+                    "img_02/05.jpg", "img_02/06.jpg", "img_02/07.jpg", "img_02/08.jpg", "img_02/09.jpg",
+                    "img_02/10.jpg", "img_02/11.jpg", "img_02/12.jpg"]
+
+                console.log(item[0]);
+
+                $("#choice_item").attr("src", "img01/top_1.jpg");
+                $("#re_1").attr("src", item[0]);
+                $("#re_2").attr("src", item[1]);
+                $("#re_3").attr("src", item[2]);
+                console.log(item);
+            });
+
+            $("#tops2").on("click", function () {
+
+                $("#choice_item").attr("src", "img01/top_2.jpg");
+                $("#re_1").attr("src", "img_02/01.jpg")
+                $("#re_2").attr("src", "img_02/04.jpg")
+                $("#re_3").attr("src", "img_02/05.jpg")
+            });
+
+            $("#tops3").on("click", function () {
+
+                $("#choice_item").attr("src", "img01/top_3.jpg");
+                $("#re_1").attr("src", "img_02/05.jpg");
+                $("#re_2").attr("src", "img_02/01.jpg");
+                $("#re_3").attr("src", "img_02/03.jpg");
+
+            });
+
+            $("#bottom1").on("click", function () {
+
+                $("#choice_item").attr("src", "img01/botom_1.jpg");
+                $("#re_1").attr("src", "img_02/06.jpg");
+                $("#re_2").attr("src", "img_02/07.jpg");
+                $("#re_3").attr("src", "img_02/08.jpg");
+            });
+
+            $("#bottom2").on("click", function () {
+
+                $("#choice_item").attr("src", "img01/botom_2.jpg");
+                $("#re_1").attr("src", "img_02/09.jpg");
+                $("#re_2").attr("src", "img_02/10.jpg");
+                $("#re_3").attr("src", "img_02/07.jpg");
+
+            });
+
+            $("#bottom3").on("click", function () {
+
+                $("#choice_item").attr("src", "img01/botom_3.jpg");
+                $("#re_1").attr("src", "img_02/11.jpg");
+                $("#re_2").attr("src", "img_02/12.jpg");
+                $("#re_3").attr("src", "img_02/08.jpg");
+
+            });
+
+
+            ///////////////////////////////////////
+            //////functionを一つにまとめる。//////////
+            ///////////////////////////////////////
+            //base64からimgに変更
+            function Base64ToImage(base64img, callback) {
+                var img = new Image();
+                img.onload = function () {
+                    callback(img);
+                };
+                img.src = base64img;
+            }
+
+            //imgをbase64に変換
+            function ImageToBase64(img, mime_type) {
+                var canvas = document.createElement("canvas");
+                canvas.width = img.width;
+                canvas.height = img.height;
+
+                var ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0);
+
+                return canvas.toDataURL(mime_type);
+            }
+            ///////////////////////////////////////
+            //////functionを一つにまとめた。//////////
+            ///////////////////////////////////////
+
+
+
+
+
+            //btn1をクリック
+            $("#btn1").on("click", function () {
+
+                var img = document.getElementById('re_1');
+                var b64 = ImageToBase64(img, "image/jpeg");
+
+                var obj = {
+                    image: b64
+                };
+
+                var json_obj = JSON.stringify(obj);
+                localStorage.setItem("image1", json_obj);
+
+
+            });
+
+            //3.ページ読み込み：保存データ取得表示
+            if (localStorage.getItem("image1")) {
+
+                var json_text = localStorage.getItem("image1");
+                var obj1 = JSON.parse(json_text);
+                var base64img = obj1.image;
+                console.log(base64img);
+
+            }
+
+            //base64からimgに変更
+            function Base64ToImage(base64img, callback) {
+                var img = new Image();
+                img.onload = function () {
+                    callback(img);
+                };
+                img.src = base64img;
+            }
+
+            Base64ToImage(base64img, function (img) {
+
+                // <img>要素としてDOMに追加
+                document.getElementById('box_favorite').appendChild(img);
+            });
+
+
+            //btn1をクリック
+            $("#btn1").on("click", function () {
+
+                var img = document.getElementById('re_1');
+                var b64 = ImageToBase64(img, "image/jpeg");
+
+                var obj = {
+                    image: b64
+                };
+
+                var json_obj = JSON.stringify(obj);
+                localStorage.setItem("image1", json_obj);
+
+
+            });
+            //3.ページ読み込み：保存データ取得表示
+            if (localStorage.getItem("image1")) {
+                var json_text = localStorage.getItem("image1");
+                var obj1 = JSON.parse(json_text);
+                var base64img = obj1.image;
+                console.log(base64img);
+
+                ///////////////////////////////////////////////////////////////////////////////////
+                //////外に出ていたBase64ToImageを中に入れて処理するように変更/////////////////////////////
+                ///同時にif文の中にいれることによりその画像が入っている場合にしか処理が行われないようになる。/////
+                ///////////////////////////////////////////////////////////////////////////////////
+                Base64ToImage(base64img, function (img) {
+
+                    // <img>要素としてDOMに追加
+                    console.log(img)
+                    document.getElementById('box_favorite').appendChild(img);
+                });
+            }
+
+
+
+
+
+
+
+            //btn2をクリック
+            $("#btn2").on("click", function () {
+
+                //imgをbase64に変換
+                function ImageToBase64(img, mime_type) {
+                    var canvas = document.createElement("canvas");
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+
+                    var ctx = canvas.getContext("2d");
+                    ctx.drawImage(img, 0, 0);
+
+                    return canvas.toDataURL(mime_type);
+                }
+
+
+
+
+                var img = document.getElementById('re_2');
+                var b64 = ImageToBase64(img, "image/jpeg");
+
+                var obj = {
+                    image: b64
+                };
+
+                var json_obj = JSON.stringify(obj);
+                localStorage.setItem("image2", json_obj);
+
+            });
+
+            //3.ページ読み込み：保存データ取得表示
+            if (localStorage.getItem("image2")) {
+
+                var json_text = localStorage.getItem("image2");
+                var obj1 = JSON.parse(json_text);
+                var base64img = obj1.image;
+                console.log(base64img);
+
+            }
+
+            //base64からimgに変更
+            function Base64ToImage(base64img, callback) {
+                var img = new Image();
+                img.onload = function () {
+                    callback(img);
+                };
+                img.src = base64img;
+            }
+
+            Base64ToImage(base64img, function (img) {
+
+                // <img>要素としてDOMに追加
+                document.getElementById('box_favorite').appendChild(img);
+            });
+
+            //btn3をクリック
+            $("#btn3").on("click", function () {
+
+                //imgをbase64に変換
+                function ImageToBase64(img, mime_type) {
+                    var canvas = document.createElement("canvas");
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+
+                    var ctx = canvas.getContext("2d");
+                    ctx.drawImage(img, 0, 0);
+
+                    return canvas.toDataURL(mime_type);
+                }
+
+                var img = document.getElementById('re_3');
+                var b64 = ImageToBase64(img, "image/jpeg");
+
+                var obj = {
+                    image: b64
+                };
+
+                var json_obj = JSON.stringify(obj);
+                localStorage.setItem("image3", json_obj);
+
+            });
+
+            //3.ページ読み込み：保存データ取得表示
+            if (localStorage.getItem("image3")) {
+
+                var json_text = localStorage.getItem("image3");
+                var obj1 = JSON.parse(json_text);
+                var base64img = obj1.image;
+                console.log(base64img);
+
+            }
+
+            //base64からimgに変更
+            function Base64ToImage(base64img, callback) {
+                var img = new Image();
+                img.onload = function () {
+                    callback(img);
+                };
+                img.src = base64img;
+            }
+
+            Base64ToImage(base64img, function (img) {
+
+                // <img>要素としてDOMに追加
+                document.getElementById('box_favorite').appendChild(img);
+            });
+
+
+            //消す
+            // $("#btn4").on("click", function () {
+            //     // var text = $("#text_area").val();
+            //     // localStorage.removeItem("memo");
+            //     $("#text_area").val("");
+            //     $("#input").val("");
+
+            // });
+
+            //2.clear クリックイベント
+            $("#btn4").on("click", function () {
+                localStorage.removeItem("image1");
+                // $("#input").val("");
+                // $("#text_area").val("");
+                location.reload();
+            });
+
+            $("#btn5").on("click", function () {
+                localStorage.removeItem("image2");
+                location.reload();
+                // $("#input").val("");
+                // $("#text_area").val("");
+            });
+
+            $("#btn6").on("click", function () {
+                localStorage.removeItem("image3");
+                location.reload();
+                // $("#input").val("");
+                // $("#text_area").val("");
+            });
+
+            //ページリロードをクリックイベントで発火させる
+            $('#btn1').click(function () {
+                location.reload();
+            });
+
+            $('#btn2').click(function () {
+                location.reload();
+            });
+
+            $('#btn3').click(function () {
+                location.reload();
+            });
+
+
+
+
+
+
+
+        });
+
+    </script>
+
+</body>
+
+</html>
